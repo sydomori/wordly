@@ -26,7 +26,8 @@
   overflow-y: auto;
   min-height: 0;
   scroll-behavior: smooth;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 
 }
 
@@ -68,7 +69,8 @@
 
   
   background-color: #885d5d;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   border: none;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.9);
   padding: 10px;
@@ -115,13 +117,11 @@
 }
 
 .word-content::-webkit-scrollbar-track {
-  background: #f3e9e9;
-  border-radius: 10px;
+  background: #885d5d;
 }
 
 .word-content::-webkit-scrollbar-thumb {
-  background: #885d5d;
-  border-radius: 10px;
+  background:#f3e9e9;
 }
 
 .word-content::-webkit-scrollbar-thumb:hover {
