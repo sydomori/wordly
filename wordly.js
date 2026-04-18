@@ -3,6 +3,16 @@ const url = "https://api.dictionaryapi.dev/api/v2/entries/en/hello";
 const searchButton = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 const wordDisplay = document.querySelector(".word-content");
+const myForm = document.querySelector("#wordly-form");
+
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const word = searchInput.value.trim();
+  getData(word);
+  searchInput.value = "";
+});
+
 
 
 searchButton.addEventListener("click", () => {
@@ -10,6 +20,7 @@ searchButton.addEventListener("click", () => {
   getData(word);
   searchInput.value = "";
 });
+
 
 
 async function getData(word){
