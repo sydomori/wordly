@@ -77,6 +77,13 @@
   color: #f3e9e9;
 }
 
+.word-card .error{
+  background-color: #f3e9e9;
+  color: #7a1f1f;
+  align-items: center;
+  text-align: center;
+}
+
 .audio-player {
   background: #f3e9e9;
   padding: 10px;

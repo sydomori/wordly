@@ -28,14 +28,29 @@ async function getData(word){
       audio: data[0].phonetics[0].audio
     }
     */
+
+    if(!response.ok){
+      displayError(data.message);
+      return;
+    }
     
     displayWord(data);
 
   }catch(error){
-    console.log(error);
+    displayError("Word not found, please try again");
   }
   
 }
+
+function displayError(message){ 
+  wordDisplay.innerHTML = `
+   <div class="word-card error">
+     <h3>Word not found</h3>
+     <p>${message}</p>
+   </div>  
+  `
+}
+
 
 getData("hello");
 
