@@ -47,7 +47,7 @@ function displayWord(word){
       <p>Definition: ${word.definition1}</p>
       ${
         word.audio 
-        ? `<audio controls src="${word.audio}"></audio>` 
+        ? `<audio class="audio-player" controls src="${word.audio}"></audio>` 
         : ""
       }
     </div>
