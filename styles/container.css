@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  max-height: 400px;
 }
 
 #wordly-form{
@@ -46,9 +47,10 @@
 }
 
 .word-card{
-  display: grid;
-  grid-template-rows: repeat(5,1fr);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
   text-align: left;
   justify-content: center;
   background-color: #885d5d;
@@ -57,6 +59,9 @@
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.9);
   padding: 10px;
   color: #f3e9e9;
+  overflow: auto;
+  max-height: 300px;
+  scroll-behavior: smooth;
 }
 
 .audio-player {
