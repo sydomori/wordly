@@ -24,6 +24,9 @@
   background-color: #a47171;
   color: white;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 .search-btn:hover{
@@ -34,4 +37,9 @@
   border-color: #885d5d;
   box-shadow: 0 0 0 0.2rem rgba(136, 93, 93, 0.25);
 
+}
+
+.search-icon{
+  width: 20px;
+  height: 20px;
 }
