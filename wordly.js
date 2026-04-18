@@ -1,7 +1,5 @@
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/hello";
 
-let words = [];
-
 const searchButton = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 const wordDisplay = document.querySelector(".word-content");
@@ -30,33 +28,30 @@ async function getData(word){
 
     console.log(myWord);
     
-    words.push(myWord);
-    //console.log(words);
+    displayWord(myWord);
 
   }catch(error){
     console.log(error);
   }
-  displayWord();
+  
 }
 
 getData("hello");
 
-function displayWord(){
-  wordDisplay.innerHTML = "";
- let html = "";
+function displayWord(word){
  
-  words.forEach(word => {
-    html += `
+  wordDisplay.innerHTML = `
     <div class="word-card">
-      <h2>word:${word.word}</h2>
-      <p>part of speech:${word.partOfSpeech}</p>
-      <p>definition:${word.definition1}</p>
-      <audio controls src="${word.audio}">audio</audio>
+      <h2>Word: ${word.word}</h2>
+      <p>Part of speech: ${word.partOfSpeech}</p>
+      <p>Definition: ${word.definition1}</p>
+      ${
+        word.audio 
+        ? `<audio controls src="${word.audio}"></audio>` 
+        : ""
+      }
     </div>
-    `
- });
-
- wordDisplay.innerHTML = html;
+  `;
  
 }
 
