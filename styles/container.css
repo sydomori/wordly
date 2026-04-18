@@ -29,3 +29,9 @@
 .search-btn:hover{
   background-color:#885d5d ;
 }
+
+.search-input:focus{
+  border-color: #885d5d;
+  box-shadow: 0 0 0 0.2rem rgba(136, 93, 93, 0.25);
+
+}
