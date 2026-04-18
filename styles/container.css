@@ -109,3 +109,21 @@
 .meaning-block li {
   margin-bottom: 6px;
 }
+
+.word-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.word-content::-webkit-scrollbar-track {
+  background: #f3e9e9;
+  border-radius: 10px;
+}
+
+.word-content::-webkit-scrollbar-thumb {
+  background: #885d5d;
+  border-radius: 10px;
+}
+
+.word-content::-webkit-scrollbar-thumb:hover {
+  background: #a47171;
+}
