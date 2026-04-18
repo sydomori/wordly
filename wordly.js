@@ -18,7 +18,8 @@ async function getData(word){
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
-
+    
+    /*
     let myWord = {
       word: data[0].word,
       partOfSpeech: data[0].meanings[0].partOfSpeech,
@@ -26,10 +27,9 @@ async function getData(word){
       synonyms: data[0].meanings[0].synonyms || [],
       audio: data[0].phonetics[0].audio
     }
-
-    console.log(myWord);
+    */
     
-    displayWord(myWord);
+    displayWord(data);
 
   }catch(error){
     console.log(error);
@@ -40,7 +40,34 @@ async function getData(word){
 getData("hello");
 
 function displayWord(word){
- 
+  const myWord = word[0];
+
+  wordDisplay.innerHTML = `
+    <div class="word-card">
+      <h2>Word: ${myWord.word}</h2>
+
+      ${myWord.meanings.map(meaning => `
+        <div class="meaning-block">
+          <p>Part of speech: ${meaning.partOfSpeech}</p>
+          
+          <ul>
+            ${meaning.definitions.map(definition => `
+              <li>${definition.definition}</li>
+            `).join("")}
+          </ul>
+        </div>
+      `).join("")}
+
+      ${
+        myWord.phonetics[0].audio
+        ? `<audio class="audio-player" controls src="${myWord.phonetics[0].audio}"></audio>` 
+        : ""
+      }
+
+    </div>
+  `;
+
+  /*
   wordDisplay.innerHTML = `
     <div class="word-card">
       <h2>Word: ${word.word}</h2>
@@ -58,8 +85,13 @@ function displayWord(word){
       }
     </div>
   `;
- 
+  */
 }
+
+
+  
+ 
+
 
 
 
