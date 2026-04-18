@@ -23,6 +23,7 @@ async function getData(word){
       word: data[0].word,
       partOfSpeech: data[0].meanings[0].partOfSpeech,
       definition1: data[0].meanings[0].definitions[0].definition,
+      synonyms: data[0].meanings[0].synonyms || [],
       audio: data[0].phonetics[0].audio
     }
 
@@ -45,6 +46,11 @@ function displayWord(word){
       <h2>Word: ${word.word}</h2>
       <p>Part of speech: ${word.partOfSpeech}</p>
       <p>Definition: ${word.definition1}</p>
+     ${ 
+       word.synonyms && word.synonyms.length > 0
+        ? `<p>Synonyms: ${word.synonyms.join(", ")}</p>`
+        : ""
+      }
       ${
         word.audio 
         ? `<audio class="audio-player" controls src="${word.audio}"></audio>` 
